@@ -1,0 +1,21 @@
+app = "steam"
+primary_region = "ord"
+vm.size = "l40s"
+
+[experimental]
+cmd = "sleep inf"
+
+[build]
+  image = "josh5/steam-headless:latest"
+
+[[mounts]]
+source = "gamedata"
+destination = "/data"
+
+[[files]]
+guest_path = "/etc/cont-init.d/05-fly.sh"
+local_path = "05-fly.sh"
+
+[http_service]
+internal_port = 8083
+force_https = true
