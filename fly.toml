@@ -1,12 +1,8 @@
 app = "steam"
 primary_region = "ord"
 vm.size = "l40s"
-
-[experimental]
-cmd = "sleep inf"
-
-[build]
-  image = "josh5/steam-headless:latest"
+build.image = "josh5/steam-headless:latest"
+#experimental.cmd = "sleep inf"
 
 [[mounts]]
 source = "gamedata"
